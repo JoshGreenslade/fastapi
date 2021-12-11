@@ -11,6 +11,7 @@ commit:
 
 deploy:
 	git push heroku main
+	heroku run "alembic upgrade head"
 
 start:
 	uvicorn app.main:app --reload
