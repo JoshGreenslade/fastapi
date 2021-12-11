@@ -43,6 +43,7 @@ def get_post(
     db: Session = Depends(get_db),
     current_user: int = Depends(oauth2.get_current_user),
 ):
+
     # cursor.execute(""" SELECT * FROM posts WHERE id=%s; """, vars=(id,))
     # post = cursor.fetchone()
     post = (
