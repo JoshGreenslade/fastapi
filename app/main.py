@@ -29,4 +29,4 @@ app.include_router(authentication.router)
 
 @app.get("/")  # Define a path/route operation.
 async def root():  # async is optional. Used to async operations.
-    return {"message": "Hello World!!!!!"}  # FastAPI auto converts to JSON
+    return {"message": "Bah Humbug!"} # FastAPI auto converts to JSON
