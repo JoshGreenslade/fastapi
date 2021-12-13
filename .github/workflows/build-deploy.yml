@@ -4,6 +4,15 @@ on: [push, pull_request]
 
 jobs: 
   job1:
+    env:
+      DB_HOST:localhost
+      DB_NAME:fastapi
+      DB_USR:postgres
+      DB_PWD:Test123
+      AUTH_SECRET_KEY:123
+      AUTH_ALGORITHM:HS256
+      AUTH_EXPIRE_TIME_MIN:30
+
     runs-on: ubuntu-latest
     steps: 
       - name: Pull Git Repo
