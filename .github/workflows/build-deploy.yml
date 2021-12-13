@@ -9,6 +9,13 @@ jobs:
       - name: Pull Git Repo
         uses: actions/checkout@v2
       
-      - name: Say hello world
-        run: echo "Hello World"
-        
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Update Pip
+        run: pyhton -m pip install --upgrade pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
