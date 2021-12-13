@@ -4,15 +4,16 @@ on: [push, pull_request]
 
 jobs: 
   job1:
-    environment: Testing
+    environment: 
+      name: Testing
     env:
-      DB_HOST:${{secrets.DB_HOST}}
-      DB_NAME:${{secrets.DB_NAME}}
-      DB_USR:${{secrets.DB_USR}}
-      DB_PWD:${{secrets.DB_PWD}}
-      AUTH_SECRET_KEY:${{secrets.AUTH_SECRET_KEY}}
-      AUTH_ALGORITHM:${{secrets.AUTH_ALGORITHM}}
-      AUTH_EXPIRE_TIME_MIN:${{secrets.AUTH_EXPIRE_TIME_MIN}}
+      DB_HOST: ${{secrets.DB_HOST}}
+      DB_NAME: ${{secrets.DB_NAME}}
+      DB_USR: ${{secrets.DB_USR}}
+      DB_PWD: ${{secrets.DB_PWD}}
+      AUTH_SECRET_KEY: ${{secrets.AUTH_SECRET_KEY}}
+      AUTH_ALGORITHM: ${{secrets.AUTH_ALGORITHM}}
+      AUTH_EXPIRE_TIME_MIN: ${{secrets.AUTH_EXPIRE_TIME_MIN}}
 
     runs-on: ubuntu-latest
     steps: 
