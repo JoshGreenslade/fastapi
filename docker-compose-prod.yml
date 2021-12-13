@@ -1,0 +1,28 @@
+version: "3"
+services:
+  api:
+    build: .
+    command: bash -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    ports: 
+      - 80:8000
+    depends_on:
+      - postgres
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_PWD=${DB_PWD}
+      - DB_NAME=${DB_NAME}
+      - SECRET_KEY=${AUTH_SECRET_KEY}
+      - ALGORITHM=${AUTH_ALGORITHM}
+      - ACCESS_TOKEN_EXPIRE_MIN=${AUTH_TOKEN_EXPIRE_MIN}
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=fastapi
+      - POSTGRES_PASSWORD=password123
+    
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+
+volumes:
+  postgres-db: 

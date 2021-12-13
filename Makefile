@@ -3,6 +3,7 @@ install:
 
 install-dev:
 	pip install -r requirements_dev.txt
+	pip freeze >> requirements.txt
 
 commit:
 	git add *
@@ -24,3 +25,6 @@ migrate:
 
 makemigrations:
 	alembic revision --autogenerate -m "'${m}'"
+
+test:
+	pytest -v -s

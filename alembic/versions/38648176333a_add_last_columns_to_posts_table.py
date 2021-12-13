@@ -33,5 +33,5 @@ def upgrade():
 
 
 def downgrade():
-    op.drop_column('posts', 'created_at')
-    op.drop_column('posts', 'published')
+    op.drop_column("posts", "created_at")
+    op.drop_column("posts", "published")

@@ -34,6 +34,7 @@ class User(Base):
         TIMESTAMP(timezone=True), nullable=False, server_default=text("now()")
     )
 
+
 class Vote(Base):
     __tablename__ = "votes"
 
