@@ -4,14 +4,15 @@ on: [push, pull_request]
 
 jobs: 
   job1:
+    environment: Testing
     env:
-      DB_HOST:localhost
-      DB_NAME:fastapi
-      DB_USR:postgres
-      DB_PWD:Test123
-      AUTH_SECRET_KEY:123
-      AUTH_ALGORITHM:HS256
-      AUTH_EXPIRE_TIME_MIN:30
+      DB_HOST:${{secrets.DB_HOST}}
+      DB_NAME:${{secrets.DB_NAME}}
+      DB_USR:${{secrets.DB_USR}}
+      DB_PWD:${{secrets.DB_PWD}}
+      AUTH_SECRET_KEY:${{secrets.AUTH_SECRET_KEY}}
+      AUTH_ALGORITHM:${{secrets.AUTH_ALGORITHM}}
+      AUTH_EXPIRE_TIME_MIN:${{secrets.AUTH_EXPIRE_TIME_MIN}}
 
     runs-on: ubuntu-latest
     steps: 
